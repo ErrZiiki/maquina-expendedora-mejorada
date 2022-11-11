@@ -57,8 +57,15 @@ public class MaquinaExpendedoraMejorada {
     }
     public int vaciarDineroDeLaMaquina(){
         int balanceTotal = balanceClienteActual + totalDineroAcumulado;
-        balanceClienteActual = 0;
-        totalDineroAcumulado = 0;
+        
+        if (balanceClienteActual == 0){
+            balanceClienteActual = 0;
+            totalDineroAcumulado = 0;
+        }
+        else{
+            System.out.println("No se puede realizar la acción solicitada debido a que la operación del ciente sigue  activa");
+            balanceTotal = -1;
+        }
         return balanceTotal;
     }
     /**
