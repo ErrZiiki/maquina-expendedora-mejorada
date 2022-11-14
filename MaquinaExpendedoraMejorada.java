@@ -110,7 +110,9 @@ public class MaquinaExpendedoraMejorada {
                 balanceClienteActual = balanceClienteActual - precioBillete;
                 billetesImpresos += 1;
                 if (maquinaConPremios == true){
-                    System.out.println("Enhorabuena has ganado un descuento de "+(precioBillete*0.25)+"€ en el establecimiento de tu preferencia.");
+                    if(billetesImpresos % 4 == 0){
+                        System.out.println("Enhorabuena has ganado un descuento de "+(precioBillete*0.25)+"€ en el establecimiento de tu preferencia.");
+                    }
                 }
             }
             else {
